@@ -1,12 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace EjercicioAbstraccion_Angel
 {
-    internal class DolaresALempiras
-    {
-    }
+   
+        public class DolaresALempiras : Formulas
+        {
+            private double dolares;
+            private const double tasaDeCambio = 24.5; // Ejemplo de tasa de cambio
+
+            public DolaresALempiras(double dolares)
+            {
+                this.dolares = dolares;
+            }
+
+            public override double Calcular()
+            {
+                return dolares * tasaDeCambio;
+            }
+
+            public override void Imprimir()
+            {
+                Console.WriteLine(dolares + " dólares son " + Calcular() + " lempiras");
+            }
+        }
+
+    
 }

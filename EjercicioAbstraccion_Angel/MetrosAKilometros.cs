@@ -1,12 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace EjercicioAbstraccion_Angel
 {
-    internal class MetrosAKilometros
-    {
-    }
+   
+        public class MetrosAKilometros : Formulas
+        {
+            private double metros;
+
+            public MetrosAKilometros(double metros)
+            {
+                this.metros = metros;
+            }
+
+            public override double Calcular()
+            {
+                return metros / 1000;
+            }
+
+            public override void Imprimir()
+            {
+                Console.WriteLine(metros + " metros son " + Calcular() + " kilómetros");
+            }
+        }
+
+    
 }
